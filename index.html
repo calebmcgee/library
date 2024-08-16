@@ -3,11 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Library</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <div class="page">
+        <div class="header">
+            <h1>Library</h1>
+        </div>
+        <div class="addBooks">
+            <button class="showButton">Add Book</button>
+            <dialog class="modal">
+                <form>
+                    <fieldset>
+                        <legend>Book Details</legend>
+                        <label for="title">Title
+                        <input value="Title" name="title" id="title" type="text">
+                        </label>
+                        <label for="author">Author
+                        <input value="Author"name="author" id="author" type="text">
+                        </label>
+                        <label for="pages">Pages
+                        <input value="100" name="pages" id="pages" type="number">
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Read</legend>
+                        <label for="readYes">Yes
+                            <input name="read" id="readYes" type="radio" value="Read">
+                        </label>
+                        <label for="readNo">No
+                            <input name="read" id="readNo" type="radio" value="Unread">
+                        </label>
+                    </fieldset>
+                    <button type="submit" name="submit" id="submit" onclick="addBookToLibrary(this.form)">Submit</button>
+                    <button type="reset" name="close" id="closeButton">Close</button>
+                </form>
+            </dialog>
+        </div>
+        <div class="bookList">
+        
+        </div>
+    </div>
+
 </body>
 </html>

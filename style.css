@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.page {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+
+.header {
+    background-color: #00798C;
+    color: white;
+    grid-column: 1/3;
+    height: 150px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    text-align: center;
+}
+.addBooks {
+    background-color: #003D5B;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+}
+.showButton {
+    background-color: #EDAE49;
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 0px 5px black;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;;
+}
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.bookList {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 100px;
+    gap: 20px;
+}
+
+fieldset {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.book{
+    width: minmax(min-content, 250px);
+    height: 250px;
+    background-color: #9F84BD;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px gray;
+    padding: 20px;
+    color: white;
+}
+.title{
+    font-weight: bold;
+    font-size: 24px;
+}
+.author{
+    font-size: 18px;
+    text-decoration: underline;
+    grid-column: 1/3;
+}
+.pages {
+    grid-column: 1/3;
+}
+.removeButton {
+    grid-column: 2/3;
+
+}
+.toggleRead{
+    grid-column: 1/3;
+}
+.removeButton{
+    background-color: #9F84BD;
+    height: min-content;
+    height: 30px;
+    width: 30px;
+    border: none;
+}
+.book div {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+}
+path{
+    width: 30px;
+    height: 30px;
+}
