@@ -24,7 +24,7 @@ const Book = function (title, author, pages, read) {
 };
 
 const myLibrary = [];
-const count = 1;
+let count = 1;
 
 const addBookToLibrary = (form) => {
   let bookTitle = form.title.value;
@@ -40,8 +40,9 @@ const displayBooks = () => {
   let bookList = document.querySelector('.bookList');
   let last = myLibrary[myLibrary.length-1];
     let book = document.createElement('div');
-    book.classList.add('book-' + count);
-    count += 1;
+    book.setAttribute('id', 'book-' + count);
+    book.classList.add('book');
+    
     bookList.appendChild(book);
 
     let title = document.createElement('p');
@@ -51,6 +52,7 @@ const displayBooks = () => {
 
     let remove = document.createElement('button');
     remove.classList.add('removeButton');
+    remove.setAttribute('id', "remove-" + count);
     let close_svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     close_svg.setAttribute('viewBox', '0 0 24 24')
     let path = document.createElementNS('http://www.w3.org/2000/svg','path');
@@ -60,7 +62,9 @@ const displayBooks = () => {
     book.appendChild(remove);
 
     remove.addEventListener('click', (event) => {
-      event.target.parentNode.parentNode.remove();
+      let removeCount = remove.id.split('-')[1];
+      let bookDelete = 'book-' + removeCount;
+      document.querySelector("#" + bookDelete).remove();
     });
 
     let author = document.createElement('p');
@@ -94,6 +98,8 @@ const displayBooks = () => {
         last.read = 'read';
         toggleRead.textContent = 'Read';
       }
+
+      count += 1;
     });
 }
 
